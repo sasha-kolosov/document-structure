@@ -1,5 +1,8 @@
 const container = document.getElementById('tasks__list')
 const input = document.getElementById('task__input')
+const tasksAdd = document.getElementById('tasks__add')
+
+tasksAdd.addEventListener('click', event => event.preventDefault())
 
 if(window.localStorage.getItem('arr') == null) {
     window.localStorage.setItem('arr', JSON.stringify([]))
@@ -26,6 +29,7 @@ const createTast = text => {
 
 document.addEventListener('keydown', event => {
     if(event.keyCode == 13 && input.value.length > 0) {
+        console.log(event)
 
         const array = JSON.parse(window.localStorage.getItem('arr'))
         
@@ -49,7 +53,7 @@ document.addEventListener('keydown', event => {
 
             for(let j = 0; j < arr.length; j++) {
                 if(arr[j].text == `${taskTitle[i].innerHTML}`) {
-                    arr.splice(i, 1)
+                    arr.splice(j, 1)
                 }
             }
 
