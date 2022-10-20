@@ -28,7 +28,7 @@ const createTast = text => {
 }
 
 document.addEventListener('keydown', event => {
-    if(event.keyCode == 13 && input.value.length.trim() > 0) {
+    if(event.key == 'Enter' && input.value.trim().length > 0) {
         console.log(event)
 
         const array = JSON.parse(window.localStorage.getItem('arr'))
