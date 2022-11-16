@@ -3,7 +3,7 @@ const hasTooltip = document.getElementsByClassName('has-tooltip')
 
 for(let i = 0; i < hasTooltip.length; i++) {
     hasTooltip[i].addEventListener('click', () => {
-        tooltip.classList.toggle('tooltip_active')
+        tooltip.classList.add('tooltip_active')
         tooltip.innerHTML = hasTooltip[i].getAttribute('title')
 
         const position = hasTooltip[i].getBoundingClientRect()
