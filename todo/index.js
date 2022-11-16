@@ -27,8 +27,8 @@ const createTast = text => {
     </div>`
 }
 
-document.addEventListener('keydown', event => {
-    if(event.key == 'Enter' && input.value.trim().length > 0) {
+tasksAdd.addEventListener('click', event => {
+    if(input.value.trim().length > 0) {
         console.log(event)
 
         const array = JSON.parse(window.localStorage.getItem('arr'))
